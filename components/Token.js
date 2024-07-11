@@ -4,7 +4,8 @@ import { StyleSheet, View, Pressable, Text } from 'react-native';
 const Token = (props) => {
     const [getColor, setColor] = useState(-1);
     const tokenHandler = (num) => {
-        props.handler(num);
+        let ret = props.handler(num);
+        if (ret !== -1) setColor(ret);
     };
     return (
         <>

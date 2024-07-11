@@ -4,7 +4,7 @@ import Token from './Token';
 
 const Column = (props) => {
     const tokenHandler = (numRow) => {
-        props.columnHandler(numRow, props.num);
+        return props.columnHandler(numRow, props.num);
     };
     
     return (
@@ -12,12 +12,12 @@ const Column = (props) => {
             flexDirection: 'column',
             justifyContent: 'center',
         }}>
+            <Token handler={tokenHandler} num={0}></Token>
             <Token handler={tokenHandler} num={1}></Token>
             <Token handler={tokenHandler} num={2}></Token>
             <Token handler={tokenHandler} num={3}></Token>
             <Token handler={tokenHandler} num={4}></Token>
             <Token handler={tokenHandler} num={5}></Token>
-            <Token handler={tokenHandler} num={6}></Token>
         </View>
     );
 };
